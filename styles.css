@@ -1,74 +1,32 @@
 /* Sparky the robot dog: one-page info site with a request form link at the bottom.
+   Look: dark grey background, gold highlights, white text.
    Layout: phone-first single column (most visitors arrive by tapping an NFC tag);
    wide screens get a two-up hero and a side-by-side LiDAR explainer. */
 
 :root {
-  --paper: #f3f5f7;
-  --surface: #ffffff;
-  --band: #e6ebef;
-  --ink: #14202b;
-  --muted: #566573;
-  --line: #d2dae1;
-  --accent: #f06a1d;        /* signal orange: buttons, laser beam */
-  --accent-text: #b4450b;   /* orange that is dark enough for text */
-  --on-accent: #14202b;
-  --accent-shadow: #b4450b55;
-  --ring: #f06a1d;
-  --scan-point: #0e7c70;    /* LiDAR point-cloud dots */
-  --scan-cell: #3b5568;     /* map grid squares */
-  --robot-body: #d3d7da;
-  --robot-limb: #aeb5ba;
-  --robot-edge: #858d94;
-  --robot-dark: #2a2f35;
-  --cable: #2a2f35;
+  /* One dark look: dark grey background, gold highlights, white text. */
+  --paper: #232629;         /* page background (dark grey) */
+  --surface: #2d3135;       /* cards, canvas, readouts */
+  --band: #1c1f22;          /* request section at the bottom */
+  --ink: #ffffff;           /* main text */
+  --muted: #ffffff;         /* secondary text (also white) */
+  --line: #41474d;          /* dividers and borders */
+  --accent: #e2b23a;        /* gold: buttons, laser beam, active steps */
+  --accent-text: #f0c661;   /* gold for highlighted words */
+  --on-accent: #1c1f22;     /* dark label on gold buttons so it stays readable */
+  --accent-shadow: #00000099;
+  --ring: #f0c661;
+  --scan-point: #ffffff;    /* LiDAR point-cloud dots */
+  --scan-cell: #9aa3ab;     /* map grid squares */
+  --robot-body: #c4c9cd;
+  --robot-limb: #8f979e;
+  --robot-edge: #5f676e;
+  --robot-dark: #121416;
+  --cable: #d9dde0;
   --led: #2fbf71;
   --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
   --font-body: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
   --font-data: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #0e141a;
-    --surface: #151e27;
-    --band: #121a22;
-    --ink: #e6ecf1;
-    --muted: #9aa8b5;
-    --line: #26323e;
-    --accent: #ff7a2e;
-    --accent-text: #ff9a57;
-    --on-accent: #14202b;
-    --accent-shadow: #00000099;
-    --ring: #ff9a57;
-    --scan-point: #4fd1c5;
-    --scan-cell: #9fb4c6;
-    --robot-body: #b9c0c6;
-    --robot-limb: #858e96;
-    --robot-edge: #5b646c;
-    --robot-dark: #0b0f13;
-    --cable: #c9d0d6;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #0e141a;
-  --surface: #151e27;
-  --band: #121a22;
-  --ink: #e6ecf1;
-  --muted: #9aa8b5;
-  --line: #26323e;
-  --accent: #ff7a2e;
-  --accent-text: #ff9a57;
-  --on-accent: #14202b;
-  --accent-shadow: #00000099;
-  --ring: #ff9a57;
-  --scan-point: #4fd1c5;
-  --scan-cell: #9fb4c6;
-  --robot-body: #b9c0c6;
-  --robot-limb: #858e96;
-  --robot-edge: #5b646c;
-  --robot-dark: #0b0f13;
-  --cable: #c9d0d6;
   color-scheme: dark;
 }
 
@@ -104,7 +62,7 @@ h2[tabindex="-1"]:focus { outline: none; }
   text-transform: uppercase;
   letter-spacing: 0.13em;
   font-weight: 700;
-  color: var(--muted);
+  color: var(--accent-text);
 }
 
 /* Header */
@@ -265,8 +223,8 @@ h1 em { font-style: normal; color: var(--accent-text); }
   max-width: calc(100% - 20px);
   padding: 4px 10px;
   border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--accent);
+  color: var(--on-accent);
   font-size: 0.75rem;
   font-weight: 700;
   white-space: nowrap;
